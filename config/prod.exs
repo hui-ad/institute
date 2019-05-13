@@ -16,9 +16,12 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
+app_name =
+  (System.get_env("APP_NAME") || "institute") <> ".gigalixirapp.com"
+
 config :institute, InstituteWeb.Endpoint,
   http: [port: {:system, "PORT"}], # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
-  url: [host: "institute.gigalixirapp.com", port: 443],
+  url: [host: app_name, port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true, # Without this line, your app will not start the web server!
   secret_key_base: secret_key_base
