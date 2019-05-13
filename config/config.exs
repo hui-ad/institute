@@ -13,7 +13,7 @@ config :institute,
 # Configures the endpoint
 config :institute, InstituteWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "mBvY456isJu8xSyA5EkByweJwlGusPGpNTbgpRiUpjezNUM2tjo84Xw44OH05uIO",
+  secret_key_base: "z1g7NzAk3nicx90DAW+R8apAkSGsde6WrK+e3x/De9c3ccdfQKQL8QLfXltDVIf1",
   render_errors: [view: InstituteWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Institute.PubSub, adapter: Phoenix.PubSub.PG2]
 

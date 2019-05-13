@@ -40,7 +40,7 @@ defmodule InstituteWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_institute_key",
-    signing_salt: "UeV97PLT"
+    signing_salt: "Tghm2xv1"
 
   plug InstituteWeb.Router
 end
