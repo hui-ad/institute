@@ -88,7 +88,7 @@ This Code of Conduct and its related procedures also applies to unacceptable beh
 
 #### Contact Info
 
-- Report Anonomously - https://docs.google.com/forms/d/e/1FAIpQLSdW91G4OL98QOJ5fQomNLVwd3tMxohrXYANjA-MtGZ9mJVUxw/viewform
+- Report Anonymously - https://docs.google.com/forms/d/e/1FAIpQLSdW91G4OL98QOJ5fQomNLVwd3tMxohrXYANjA-MtGZ9mJVUxw/viewform
 
 #### License and Attribution
 
