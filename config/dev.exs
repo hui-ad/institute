@@ -1,11 +1,20 @@
 use Mix.Config
 
+database_url =
+  System.get_env("DATABASE_URL") ||
+    raise """
+    environment variable DATABASE_URL is missing.
+    For example: ecto://USER:PASS@HOST/DATABASE
+    """
+
+# If desired, must shut SSL off with "false"
+# `ssl: true` is the default
+repo_ssl = (System.get_env("REPO_SSL") || "true") == "true"
+
 # Configure your database
 config :institute, Institute.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "institute_dev",
-  hostname: "localhost",
+  ssl: repo_ssl,
+  url: database_url,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

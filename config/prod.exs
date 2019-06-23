@@ -32,14 +32,9 @@ database_url =
     environment variable DATABASE_URL is missing.
     For example: ecto://USER:PASS@HOST/DATABASE
     """
-
-# If desired, must shut SSL off with "false"
-# `ssl: true` is the default
-repo_ssl =
-  (System.get_env("REPO_SSL") || "true") == "true"
     
 config :institute, Institute.Repo,
-  ssl: repo_ssl,
+  ssl: true,
   url: database_url,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "2") # Free tier db only allows 4 connections. Rolling deploys need pool_size*(n+1) connections.
 

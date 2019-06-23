@@ -1,11 +1,16 @@
 use Mix.Config
 
+database_url =
+  System.get_env("TEST_DATABASE_URL") ||
+    raise """
+    environment variable TEST_DATABASE_URL is missing.
+    For example: ecto://USER:PASS@HOST/DATABASE
+    """
+
 # Configure your database
 config :institute, Institute.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "institute_test",
-  hostname: "localhost",
+  ssl: false,
+  url: database_url,
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,

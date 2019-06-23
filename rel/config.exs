@@ -22,6 +22,12 @@ use Mix.Releases.Config,
 # when building in that environment, this combination of release
 # and environment configuration is called a profile
 
+distillery_cookie =
+  System.get_env("DISTILLERY_COOKIE") ||
+    raise """
+    environment variable DISTILLERY_COOKIE is missing.
+    """
+
 environment :dev do
   # If you are running Phoenix, you should make sure that
   # server: true is set and the code reloader is disabled,
@@ -31,14 +37,14 @@ environment :dev do
   # dev mode.
   set dev_mode: true
   set include_erts: false
-  set cookie: :"b>Xk9nlj4GL}B{m~!1)rnB777:aeRZ;_A}DUW|j73hF[cBvXmlM$ikp~$/o$qB>g"
+  set cookie: distillery_cookie |> String.to_atom
 end
 
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: :"(PjC!G>mPB5|O2:Z$2!4g?PnwRTjM[^7Vd|oXJKB(AVK8iIqN49Ax]Q1Ka{,*WCu"
   set vm_args: "rel/vm.args"
+  set cookie: distillery_cookie |> String.to_atom
 end
 
 # You may define one or more releases in this file.

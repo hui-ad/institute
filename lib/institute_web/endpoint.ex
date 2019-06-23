@@ -37,10 +37,17 @@ defmodule InstituteWeb.Endpoint do
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
+
+  session_signing_salt =
+    System.get_env("SESSION_SIGNING_SALT") ||
+      raise """
+      environment variable SESSION_SIGNING_SALT is missing.
+      """
+  
   plug Plug.Session,
     store: :cookie,
     key: "_institute_key",
-    signing_salt: "Tghm2xv1"
+    signing_salt: session_signing_salt
 
   plug InstituteWeb.Router
 end
