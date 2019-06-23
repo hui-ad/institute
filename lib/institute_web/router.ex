@@ -17,6 +17,7 @@ defmodule InstituteWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/code_of_conduct", PageController, :code_of_conduct
   end
 
   # Other scopes may use custom stacks.
