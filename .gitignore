@@ -38,3 +38,6 @@ npm-debug.log
 
 # Elixir Language Server
 /.elixir_ls
+
+# Gigalixir
+/.netrc
