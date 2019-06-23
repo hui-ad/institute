@@ -1,6 +1,11 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
+  <h1><%= gettext "Welcome to %{name}!", name: "the Institute" %></h1>
+  Links:
+  <ul>
+    <li>
+      <%= link "Code of Conduct", to: Routes.page_path(@conn, :code_of_conduct) %>
+    </li>
+  </ul>
 </section>
 
 <section class="row">

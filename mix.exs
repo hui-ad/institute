@@ -33,6 +33,7 @@ defmodule Institute.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:earmark, "~> 1.3"},
       {:phoenix, "~> 1.4.5"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
