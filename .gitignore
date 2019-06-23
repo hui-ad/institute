@@ -35,3 +35,6 @@ npm-debug.log
 
 # Development env vars
 /.env
+
+# Elixir Language Server
+/.elixir_ls
