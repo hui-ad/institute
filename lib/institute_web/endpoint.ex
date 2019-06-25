@@ -43,7 +43,7 @@ defmodule InstituteWeb.Endpoint do
       raise """
       environment variable SESSION_SIGNING_SALT is missing.
       """
-  
+
   plug Plug.Session,
     store: :cookie,
     key: "_institute_key",

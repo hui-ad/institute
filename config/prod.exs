@@ -16,14 +16,15 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
-app_name =
-  (System.get_env("APP_NAME") || "institute") <> ".gigalixirapp.com"
+app_name = (System.get_env("APP_NAME") || "institute") <> ".gigalixirapp.com"
 
 config :institute, InstituteWeb.Endpoint,
-  http: [port: {:system, "PORT"}], # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
+  # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
+  http: [port: {:system, "PORT"}],
   url: [host: app_name, port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
-  server: true, # Without this line, your app will not start the web server!
+  # Without this line, your app will not start the web server!
+  server: true,
   secret_key_base: secret_key_base
 
 database_url =
@@ -32,11 +33,12 @@ database_url =
     environment variable DATABASE_URL is missing.
     For example: ecto://USER:PASS@HOST/DATABASE
     """
-    
+
 config :institute, Institute.Repo,
   ssl: true,
   url: database_url,
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "2") # Free tier db only allows 4 connections. Rolling deploys need pool_size*(n+1) connections.
+  # Free tier db only allows 4 connections. Rolling deploys need pool_size*(n+1) connections.
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "2")
 
 # Do not print debug messages in production
 config :logger, level: :info
