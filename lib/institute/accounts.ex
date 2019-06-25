@@ -31,4 +31,14 @@ defmodule Institute.Accounts do
     |> User.changeset(attrs)
     |> Repo.insert()
   end
+
+  def change_registration(%User{} = user, params) do
+    User.registration_changeset(user, params)
+  end
+
+  def register_user(attrs \\ %{}) do
+    %User{}
+    |> User.registration_changeset(attrs)
+    |> Repo.insert()
+  end
 end
