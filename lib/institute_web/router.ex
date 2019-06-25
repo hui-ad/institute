@@ -14,10 +14,6 @@ defmodule InstituteWeb.Router do
     plug(:accepts, ["json"])
   end
 
-  pipeline :require_login do
-    plug(InstituteWeb.RequireAuth)
-  end
-
   scope "/auth", InstituteWeb do
     pipe_through(:browser)
 
