@@ -44,7 +44,10 @@ defmodule Institute.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:distillery, "~> 2.0"}
+      {:distillery, "~> 2.0"},
+      {:pbkdf2_elixir, "~> 1.0"},
+      {:ueberauth, "~> 0.6.1"},
+      {:ueberauth_identity, "~> 0.2.3"}
     ]
   end
 

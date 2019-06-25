@@ -1,0 +1,17 @@
+<h1>Login</h1>
+<%= form_for @conn, 
+             @callback_url, 
+             [as: :user], 
+             fn f -> %>
+  <div class='control-group'>
+    <label class='control-label' for='nickname-input'>Username</label>
+    <%= text_input f, :username, placeholder: "Username" %>
+  </div>
+  <div class='control-group'>
+    <label class='control-label' for='password-input'>Password</label>
+    <%= password_input f, :password, placeholder: "Password" %>
+  </div>
+  <div class='control-group'>
+    <%= submit "Log in", class: 'btn btn-primary' %>
+  </div>
+<% end %>

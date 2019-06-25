@@ -12,4 +12,6 @@ defmodule InstituteWeb.PageController do
   def code_of_conduct(conn, _params) do
     html(conn, @code_of_conduct_html)
   end
+
+  def secret(conn, _params), do: html(conn, "This is secret.")
 end
