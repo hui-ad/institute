@@ -47,7 +47,8 @@ defmodule Institute.MixProject do
       {:distillery, "~> 2.0"},
       {:pbkdf2_elixir, "~> 1.0"},
       {:ueberauth, "~> 0.6.1"},
-      {:ueberauth_identity, "~> 0.2.3"}
+      {:ueberauth_identity, "~> 0.2.3"},
+      {:thesis, "~> 0.3.4"}
     ]
   end
 

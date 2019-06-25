@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
+    <%= thesis_editor(@conn) %>
     <header>
       <section class="container">
         <nav role="navigation">

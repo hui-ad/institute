@@ -33,4 +33,12 @@ defmodule InstituteWeb.Auth do
       |> halt()
     end
   end
+
+  def logged_in?(conn) do
+    !!current_session_user_id(conn)
+  end
+
+  def current_session_user_id(conn) do
+    get_session(conn, :user_id)
+  end
 end
