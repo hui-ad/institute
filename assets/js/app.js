@@ -15,3 +15,9 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+import $ from "jquery"
+// Load all Bootstrap
+// require('bootstrap')
+// Load plugins individually
+// import "./../node_modules/bootstrap/js/dist/tooltip.js"
