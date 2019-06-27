@@ -8,26 +8,25 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
-    <%= thesis_editor(@conn) %>
+    <%= if show_thesis_editor?(@conn) do %>
+      <%= thesis_editor(@conn) %>
+    <% end %>
     <header>
       <section class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
             <%= if @current_user do %>
-              <li><%= @current_user.username %></li>
+              <li>Hello, <%= @current_user.username %>! </li>
+              <li><%= link "Log out", to: Routes.auth_path(@conn, :delete, @current_user), method: "delete" %></li>
               <li><%= link "Create user", to: Routes.user_path(@conn, :new) %></li>
-              <li>
-                <%= link "Log out", to: Routes.auth_path(@conn, :delete, @current_user), method: "delete" %>
-              </li>
             <% else %>
               <li><%= link "Log in", to: Routes.auth_path(@conn, :request, :identity) %></li>
             <% end %>
           </ul>
         </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
+        <%= link to: Routes.page_path(@conn, :index), alt: "logo", class: "phx-logo" do %>
           <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
+        <% end %>
       </section>
     </header>
     <main role="main" class="container">
