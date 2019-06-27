@@ -57,9 +57,9 @@ config :thesis, Thesis.EctoStore, repo: Institute.Repo
 #   import_export_restore: []
 
 # Thesis Dynamic Pages Config
-# config :thesis, :dynamic_pages,
-#   view: InstituteWeb.PageView,
-#   templates: ["index.html", "otherview.html"],
-#   not_found_view: InstituteWeb.ErrorView,
-#   not_found_template: "404.html"
+config :thesis, :dynamic_pages,
+  view: InstituteWeb.MeetingView,
+  templates: ["page.html"],
+  not_found_view: InstituteWeb.ErrorView,
+  not_found_template: "404.html"
 

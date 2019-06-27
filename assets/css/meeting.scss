@@ -1,0 +1,56 @@
+.meeting {
+
+  font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 34em;
+  margin-right: auto;
+  margin-left: auto;
+  
+  h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    
+    small {
+      display: block;
+      font-size: 2.25rem;
+      font-weight: 500;
+    }
+  }
+  
+  h2 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  section {
+    margin-top: 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .helvetica {
+    font-family: 'helvetica neue', helvetica, sans-serif;
+  }
+}
+
+.meeting-list {
+  font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 34em;
+  margin-right: auto;
+  margin-left: auto;
+}

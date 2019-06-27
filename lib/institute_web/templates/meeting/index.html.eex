@@ -1,0 +1,7 @@
+<div class="meeting-list">
+  <ul class="list-unstyled">
+    <%=  for m <- @meetings do %>
+      <li><a href="<%= m.slug %>" alt="meeting"><%= m.title %></a> - <small><%= m.description %></small></li>
+    <% end %>
+  </ul>
+</div>
