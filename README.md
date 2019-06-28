@@ -17,7 +17,7 @@ Any registered user can create new users using the "Create user" link in the nav
 
 * Set alias:
   * `alias Institute.Accounts`
-* Create user `Accounts.register_user(%{name: John Doe, username: "john", password: "secret"})`
+* Create user `Accounts.register_user(%{name: "John Doe", username: "john", password: "secret"})`
 
 To change a user's password:
 
