@@ -1,43 +1,23 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "the Institute" %></h1>
-  Links:
-  <ul class="list-unstyled">
-    <li>
-      <%= link "Meetings", to: Routes.meeting_path(@conn, :index) %>
-    </li>
-    <li>
-      <%= link "Code of Conduct", to: Routes.page_path(@conn, :code_of_conduct) %>
-    </li>
-  </ul>
-</section>
+<div class="front-page">
+  <section>
+    <div class="row">
+      <div class="col-md-5">
+        <p>Description of meetup. Lorem ipsum dolor amet tbh glossier gentrify, vape leggings fixie ugh banjo slow-carb flannel. Leggings woke taxidermy man bun skateboard, brunch mumblecore salvia activated charcoal 8-bit tilde literally gentrify. Vice hexagon +1, franzen artisan organic godard disrupt mlkshk fanny pack. Palo santo af pabst tbh.</p>
+      </div>
+      <div class="col-md-5">
+        Next meetup information. Lorem ipsum dolor amet tbh glossier gentrify, vape leggings fixie ugh banjo slow-carb flannel. Leggings woke taxidermy man bun skateboard, brunch mumblecore salvia activated charcoal 8-bit tilde literally gentrify. Vice hexagon +1, franzen artisan organic godard disrupt mlkshk fanny pack. Palo santo af pabst tbh.
+      </div>
+      <div class="col-md-2">
+        <ul class="list-unstyled resource-links">
+          <li>
+            <%= link "Meetings", to: Routes.meeting_path(@conn, :index) %>
+          </li>
+          <li>
+            <%= link "Code of Conduct", to: Routes.page_path(@conn, :code_of_conduct) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-    </ul>
-  </article>
-</section>

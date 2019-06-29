@@ -7,12 +7,12 @@
     <title>Institute · Phoenix Framework</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
-  <body>
+  <body class="app-layout">
     <%= if show_thesis_editor?(@conn) do %>
       <%= thesis_editor(@conn) %>
     <% end %>
     <header>
-      <section class="container">
+      <section class="container-fluid header">
         <nav role="navigation">
           <ul>
             <%= if @current_user do %>
@@ -24,9 +24,12 @@
             <% end %>
           </ul>
         </nav>
-        <%= link to: Routes.page_path(@conn, :index), alt: "logo", class: "phx-logo" do %>
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        <% end %>
+        <div class="d-flex align-items-end group-title-container">
+          <div class="group-title">
+            Welcome to the Institute
+            <small>The Hawaiʻi Umbrella Institute for the Advancement of Developers</small>
+          </div>
+        </div>
       </section>
     </header>
     <main role="main" class="container">

@@ -1,0 +1,47 @@
+.app-layout {
+
+  body {
+    background: #fdfdfd;
+  }
+  
+  header {
+    border-bottom: 1px solid #eaeaea;
+    font-size: 21px;
+    margin-bottom: 4em;
+  }
+  
+  .header {
+    background-color: #553D95;
+    padding: 0;
+
+    li, a {
+      color: white;
+      font-size: 16px;
+    }
+  }
+
+  .group-title-container {
+    height: 124px;
+  }
+  .group-title {
+    background-color: white;
+    min-height: 20px;
+    font-size: 40px;
+    min-width: 600px;
+    font-weight: 100;
+    margin-left: 20px;
+    padding: 12px 40px 8px;
+
+    small {
+      font-weight: 100;
+      display: block;
+      font-size: 12px;
+      color: #474747;
+    }
+  }
+
+  nav {
+    font-weight: 100;
+  }
+}
+

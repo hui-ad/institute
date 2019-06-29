@@ -1,32 +1,62 @@
 <div class="meeting">
   <article>
-    <h1 class="helvetica"><small>Something Small</small>Heading One</h1>
-    <h2 class="helvetica">Heading Two</h2>
+    <h1 class="helvetica">
+      <small>
+        <%= content(@conn, "Meeting Type", :text) do %>
+          Meetup
+        <% end %>
+      </small>
+      <%= content(@conn, "Meeting Title", :text) do %>
+        Scala for Cats and Rabbits
+      <% end %>
+    </h1>
+    <h2 class="helvetica">
+      <%= content(@conn, "Meeting Sub-heading", :text) do %>
+        A birds guide to functional programming
+      <% end %>
+    </h2>
     <h3 class="helvetica">
-      By <a href="#about" alt="author">Author Author</a> Updated June 1, 2019
+      <%= content(@conn, "Author Link", :html) do %>
+        By <a href="#about" alt="author">Author Author</a>
+      <% end %>
     </h3>
   </article>
   <section>
     <div class="row">
       <div class="col-md-6">
         <ul>
-          <li>Time</li>
-          <li>Day</li>
-          <li>Location</li>
+          <li><%= content(@conn, "Time", :text, do: "Time: 7-8pm") %></li>
+          <li><%= content(@conn, "Day", :text, do: "Day: Wednesday, Jan. 1, 2019") %></li>
+          <li>
+            <%= content(@conn, "Location", :html) do %>
+              <a href="https://sandboxhawaii.org/" alt="Sandbox website">HTDC Sandbox</a>
+            <% end %>
+          </li>
+          <li>
+            <%= content(@conn, "Address", :html) do %>
+              <a href="https://www.google.com/maps/place/643+Ilalo+St,+Honolulu,+HI+96813/@21.296994,-157.8657639,17z/data=!3m1!4b1!4m5!3m4!1s0x7c006e0f5b137809:0x5be3e1f3c9fc3d8d!8m2!3d21.296994!4d-157.8635752" alt="Sandbox map">643 Ilalo St. Honolulu, HI 96813</a>
+            <% end %>
+          </li>
         </ul>
-        <p>Opening Lorem ipsum dolor amet tbh glossier gentrify, vape leggings fixie ugh banjo slow-carb flannel. Leggings woke taxidermy man bun skateboard, brunch mumblecore salvia activated charcoal 8-bit tilde literally gentrify. Vice hexagon +1, franzen artisan organic godard disrupt mlkshk fanny pack. Palo santo af pabst tbh.</p>
+        <%= content(@conn, "Event Description", :html) do %>
+          <p>Opening Lorem ipsum dolor amet tbh glossier gentrify, vape leggings fixie ugh banjo slow-carb flannel. Leggings woke taxidermy man bun skateboard, brunch mumblecore salvia activated charcoal 8-bit tilde literally gentrify. Vice hexagon +1, franzen artisan organic godard disrupt mlkshk fanny pack. Palo santo af pabst tbh.</p>
+        <% end %>
       </div>
       <div class="col-md-6">
-        <img src="https://place-hold.it/372x400" alt="placeholder" />
+        <%= content(@conn, "Meeting Image", :image, alt: "Meeting image", do: "https://place-hold.it/342x435") %>
       </div>
     </div>
   </section>
   <section>
-    <h1 class="helvetica">Sub Heading</h1>
+    <h1 class="helvetica">
+      <%= content(@conn, "Description Sub-Heading", :text, do: "Description Sub-heading") %>
+    </h1>
     <div class="row">
       <div class="col-md-12">
-        <p>Selfies hashtag meh biodiesel keytar chillwave lomo iceland PBR&B gastropub bespoke iPhone pour-over hot chicken. Coloring book hashtag leggings 90's typewriter, tattooed flannel celiac godard freegan sartorial prism. Pork belly activated charcoal gastropub vegan air plant church-key butcher migas lyft tofu. Small batch shoreditch ugh hell of butcher put a bird on it, master cleanse deep v fashion axe iPhone edison bulb. Vape unicorn flexitarian schlitz. Art party schlitz edison bulb cliche vinyl austin fingerstache iPhone forage truffaut.</p>
-        <p>Biodiesel synth selvage fixie PBR&B la croix shaman pickled copper mug sustainable vinyl readymade. Echo park sriracha vaporware single-origin coffee you probably haven't heard of them crucifix raclette four loko taiyaki tumblr health goth flexitarian chambray. Heirloom taiyaki letterpress occupy. Try-hard put a bird on it stumptown disrupt squid YOLO sriracha 3 wolf moon fanny pack cliche adaptogen sustainable pitchfork fixie snackwave.</p>
+        <%= content(@conn, "Additional Description", :html) do %>
+          <p>Selfies hashtag meh biodiesel keytar chillwave lomo iceland PBR&B gastropub bespoke iPhone pour-over hot chicken. Coloring book hashtag leggings 90's typewriter, tattooed flannel celiac godard freegan sartorial prism. Pork belly activated charcoal gastropub vegan air plant church-key butcher migas lyft tofu. Small batch shoreditch ugh hell of butcher put a bird on it, master cleanse deep v fashion axe iPhone edison bulb. Vape unicorn flexitarian schlitz. Art party schlitz edison bulb cliche vinyl austin fingerstache iPhone forage truffaut.</p>
+          <p>Biodiesel synth selvage fixie PBR&B la croix shaman pickled copper mug sustainable vinyl readymade. Echo park sriracha vaporware single-origin coffee you probably haven't heard of them crucifix raclette four loko taiyaki tumblr health goth flexitarian chambray. Heirloom taiyaki letterpress occupy. Try-hard put a bird on it stumptown disrupt squid YOLO sriracha 3 wolf moon fanny pack cliche adaptogen sustainable pitchfork fixie snackwave.</p>
+        <% end %>
       </div>
         </div>
   </section>
