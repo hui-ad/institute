@@ -70,7 +70,9 @@ config :institute, InstituteWeb.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/institute_web/{live,views}/.*(ex)$",
-      ~r"lib/institute_web/templates/.*(eex)$"
+      ~r"lib/institute_web/templates/.*(eex)$",
+      ~r"lib/institute/{accounts,meetings}/.*(eex)$",
+      ~r"lib/institute/.*(eex)$"
     ]
   ]
 

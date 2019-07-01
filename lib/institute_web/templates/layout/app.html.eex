@@ -26,8 +26,14 @@
         </nav>
         <div class="d-flex align-items-end group-title-container">
           <div class="group-title">
-            Welcome to the Institute
-            <small>The Hawaiʻi Umbrella Institute for the Advancement of Developers</small>
+            <%= global_content(@conn, "Group Title", :text) do %>
+              Welcome to the Institute
+            <% end %>
+            <small>
+              <%= global_content(@conn, "Group Sub-Heading", :text) do %>
+                The Hawaiʻi Umbrella Institute for the Advancement of Developers
+              <% end %>
+            </small>
           </div>
         </div>
       </section>

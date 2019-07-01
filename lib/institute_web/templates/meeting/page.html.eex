@@ -3,11 +3,11 @@
     <h1 class="helvetica">
       <small>
         <%= content(@conn, "Meeting Type", :text) do %>
-          Meetup
+          Meeting
         <% end %>
       </small>
       <%= content(@conn, "Meeting Title", :text) do %>
-        Scala for Cats and Rabbits
+        <%= @thesis_page.title %>
       <% end %>
     </h1>
     <h2 class="helvetica">
@@ -39,7 +39,7 @@
           </li>
         </ul>
         <%= content(@conn, "Event Description", :html) do %>
-          <p>Opening Lorem ipsum dolor amet tbh glossier gentrify, vape leggings fixie ugh banjo slow-carb flannel. Leggings woke taxidermy man bun skateboard, brunch mumblecore salvia activated charcoal 8-bit tilde literally gentrify. Vice hexagon +1, franzen artisan organic godard disrupt mlkshk fanny pack. Palo santo af pabst tbh.</p>
+          <p><%= @thesis_page.description %></p>
         <% end %>
       </div>
       <div class="col-md-6">

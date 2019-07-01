@@ -1,8 +1,21 @@
 .front-page {
+  
+  h1 { font-size: 2.2em; }
+  
+  .description { padding-right: 3em; }
+  
+  .next-meeting {
+    
+    padding-left: 3em;
+    
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.6rem; }
+  }
+  
   .resource-links {
-    a {
-      color: #474747;
-    }
+    
     text-align: right;
+    
+    a { color: #474747; }
   }
 }
