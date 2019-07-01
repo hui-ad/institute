@@ -1,7 +1,7 @@
 defmodule InstituteWeb.Auth do
   import Plug.Conn
   import Phoenix.Controller
-  
+
   alias InstituteWeb.Router.Helpers, as: Routes
 
   def init(opts), do: opts
@@ -22,7 +22,7 @@ defmodule InstituteWeb.Auth do
   def logout(conn) do
     configure_session(conn, drop: true)
   end
-  
+
   def authenticate_user(conn, _opts) do
     if conn.assigns.current_user do
       conn

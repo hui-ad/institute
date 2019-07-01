@@ -23,6 +23,7 @@ defmodule InstituteWeb.AuthController do
   def identity_callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     username = auth.uid
     password = auth.credentials.other.password
+
     case Accounts.authenticate_by_username_and_pass(username, password) do
       {:ok, user} ->
         conn

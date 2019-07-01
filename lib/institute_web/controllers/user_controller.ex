@@ -5,7 +5,7 @@ defmodule InstituteWeb.UserController do
   alias Institute.Accounts.User
 
   plug :authenticate_user when action in [:index, :show]
-  
+
   def index(conn, _params) do
     users = Accounts.list_users()
     render(conn, "index.html", users: users)

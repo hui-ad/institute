@@ -62,4 +62,3 @@ config :thesis, :dynamic_pages,
   templates: ["page.html"],
   not_found_view: InstituteWeb.ErrorView,
   not_found_template: "404.html"
-
