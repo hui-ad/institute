@@ -15,11 +15,6 @@
         A birds guide to functional programming
       <% end %>
     </h2>
-    <h3 class="helvetica">
-      <%= content(@conn, "Author Link", :html) do %>
-        By <a href="#about" alt="author">Author Author</a>
-      <% end %>
-    </h3>
   </article>
   <section>
     <div class="row">
