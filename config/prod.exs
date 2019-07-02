@@ -20,7 +20,7 @@ config :institute, InstituteWeb.Endpoint,
   # Without this line, your app will not start the web server!
   server: true,
   # Gigalixir force SSL (redirect http to https):
-  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]]
 
 database_url =
   System.get_env("DATABASE_URL") ||
