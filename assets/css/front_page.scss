@@ -23,9 +23,7 @@
   }
   
   .resource-links {
-    
+    border-left: 1px dotted $dark-gray;
     text-align: right;
-    
-    a { color: $dark-gray; }
   }
 }

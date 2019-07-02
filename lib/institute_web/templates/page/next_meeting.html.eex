@@ -12,12 +12,12 @@
     <li>
       <%= fmt_mtg_content(content.event_location) %>
     </li>
-    <li><a href="<%= page.slug %>" alt="Meeting details">👉 See event details</a></li>
+    <li>👉 <a href="<%= page.slug %>" alt="Meeting details">See event details</a></li>
   </ul>
   <p>
     <%= fmt_mtg_content(content.event_description) %>
     <small>
-      <a href="<%= page.slug %>" alt="Meeting details">👉 More details</a>
+      👉 <a href="<%= page.slug %>" alt="Meeting details">More details</a>
     </small>
   </p>
   <p></p>
