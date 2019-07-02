@@ -6,10 +6,10 @@
           <h1>👋 Hello Fellow Programmers</h1>
           <p>Hey programming fans, some local programmers have been mulling over some ideas for a reboot of Elixir meetups. But, really we want to meet and share our interest in programming in general. This website is one of the results of those discussions. It's a place to list upcoming meetings and workshops, record previous events, and showcase fun side-projects. There's not a lot here yet, but reach out if you have suggestions.</p>
           <p>We are a community of programmers which hangs out on Slack and IRL around programming events, such as talks and workshops. The goal of these events is usually some form of collaborative learning. The programming community is small in general, but close-knit. These events give us a way to meet each other, stay in touch, and share our experiences.</p>
-          <p>We recognize that close-knit communities can come off as clique-ish, and older members can appear snobbish or arrogant protectors of their domains. We hope to actively fight against these perceptions and create a freindly space for collaboration.</p>
+          <p>We recognize that close-knit communities can seem cliquish, and more established members can appear snobbish or arrogant protectors of their domains. We hope to actively fight against these perceptions and create a friendly space for collaboration.</p>
           <h2>What we strive to do</h2>
           <ul>
-            <li>[Borrowed from the P5JS community]</li>
+            <li>[Borrowed from the <a href="https://p5js.org/community/" alt="P5JS community page">P5JS community</a>]</li>
             <li>We are not code snobs. We do not assume knowledge or imply there are things that somebody should know.</li>
             <li>We insist on actively engaging with requests for feedback regardless of their complexity.</li>
             <li>We welcome newcomers and prioritize the education of others. We strive to approach all tasks with the enthusiasm of a newcomer. Because we believe that newcomers are just as valuable in this effort as experts.</li>
@@ -18,7 +18,7 @@
           </ul>
           <h2>When problems arise</h2>
           <ul>
-            <li>[Also borrowed from the P5JS community]</li>
+            <li>[Also borrowed from the <a href="https://p5js.org/community/" alt="P5JS community page">P5JS community</a>]</li>
             <li>We listen.</li>
             <li>We clearly communicate while acknowledging other's feelings.</li>
             <li>We admit when we're wrong, apologize, and accept responsibility for our actions.</li>
