@@ -1,0 +1,14 @@
+<div class="d-flex align-items-end group-title-container">
+  <div class="group-title">
+    <span>
+      <%= global_content(@conn, "Group Title", :text) do %>
+        Welcome to the Institute
+      <% end %>
+    </span>
+    <small>
+      <%= global_content(@conn, "Group Sub-Heading", :text) do %>
+        The Hawaiʻi Umbrella Institute for the Advancement of Developers
+      <% end %>
+    </small>
+  </div>
+</div>

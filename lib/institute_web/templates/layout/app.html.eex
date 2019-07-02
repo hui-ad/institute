@@ -11,33 +11,7 @@
     <%= if show_thesis_editor?(@conn) do %>
       <%= thesis_editor(@conn) %>
     <% end %>
-    <header>
-      <section class="container-fluid header">
-        <nav role="navigation">
-          <ul>
-            <%= if @current_user do %>
-              <li>Hello, <%= @current_user.username %>! </li>
-              <li><%= link "Log out", to: Routes.auth_path(@conn, :delete, @current_user), method: "delete" %></li>
-              <li><%= link "Create user", to: Routes.user_path(@conn, :new) %></li>
-            <% else %>
-              <li><%= link "Log in", to: Routes.auth_path(@conn, :request, :identity) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <div class="d-flex align-items-end group-title-container">
-          <div class="group-title">
-            <%= global_content(@conn, "Group Title", :text) do %>
-              Welcome to the Institute
-            <% end %>
-            <small>
-              <%= global_content(@conn, "Group Sub-Heading", :text) do %>
-                The Hawaiʻi Umbrella Institute for the Advancement of Developers
-              <% end %>
-            </small>
-          </div>
-        </div>
-      </section>
-    </header>
+    <%= render("header.html", conn: @conn, current_user: @current_user, view: [@view_module, @view_template]) %>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>

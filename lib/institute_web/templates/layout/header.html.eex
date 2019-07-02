@@ -1,0 +1,23 @@
+<header>
+  <section class="container-fluid header">
+    <nav role="navigation">
+      <ul>
+        <%= if @current_user do %>
+          <li>Hello, <%= @current_user.username %>! </li>
+          <li><%= link "Log out", to: Routes.auth_path(@conn, :delete, @current_user), method: "delete" %></li>
+          <li><%= link "Create user", to: Routes.user_path(@conn, :new) %></li>
+        <% else %>
+          <li><%= link "Log in", to: Routes.auth_path(@conn, :request, :identity) %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <%= if @view == [InstituteWeb.PageView, "index.html"] do %>
+      <%= render("home_link.html", conn: @conn) %>
+    <% else %>
+      <a href="<%= Routes.page_path(@conn, :index) %>" alt="Home" class="home-link">
+        <%= render("home_link.html", conn: @conn) %>
+        
+      </a>
+    <% end %>
+  </section>
+</header>
