@@ -1,8 +1,12 @@
 $off-white: #fbfbfb;
 $dark-gray: #474747;
+$ellsworth-purple: #553D95;
 
 body {
   background-color: $off-white;
+  a {
+    color: $ellsworth-purple;
+  }
   p {
     font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
     font-size: 21px;
@@ -25,7 +29,7 @@ main {
   }
 
   .header {
-    background-color: #553D95;
+    background-color: $ellsworth-purple;
     padding: 0;
 
     nav {
