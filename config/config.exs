@@ -11,9 +11,16 @@ config :institute,
   ecto_repos: [Institute.Repo]
 
 # Configures the endpoint
+secret_key_base =
+  System.get_env("SECRET_KEY_BASE") ||
+    raise """
+    environment variable SECRET_KEY_BASE is missing.
+    You can generate one by calling: mix phx.gen.secret
+    """
+
 config :institute, InstituteWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "z1g7NzAk3nicx90DAW+R8apAkSGsde6WrK+e3x/De9c3ccdfQKQL8QLfXltDVIf1",
+  secret_key_base: secret_key_base,
   render_errors: [view: InstituteWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Institute.PubSub, adapter: Phoenix.PubSub.PG2]
 
