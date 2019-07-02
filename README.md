@@ -11,6 +11,16 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4002`](http://localhost:4002) from your browser.
 
+## Gigalixir
+
+To use Gigalixir's CLI, 
+* Push with `git push gigalixir master`
+* View logs with `gigalixir logs`
+* Add keys (for migrations and console) with `gigalixir account:ssh_keys:add "$(cat ~/.ssh/id_rsa.pub)"`
+  * In Fish Shell use `gigalixir account:ssh_keys:add (cat ~/.ssh/id_rsa.pub)`
+* Run migrations with `gigalixir ps:migrate`
+* Drop into console with `gigalixir ps:remote_console`
+
 ## User Creation
 
 Any registered user can create new users using the "Create user" link in the navigation bar. It only shows up when you're logged in, you'll need to create the first user via IEx.
