@@ -1,11 +1,26 @@
 # Institute
 
+Before you do anything, you'll need these prerequisites:
+
+* You'll need Erlang, Elixir, and Node installed. If you don't have them installed already, I recommend using `asdf` to install them. `asdf` allows you to manage multiple versions of each of these requirements on your machine.
+  * Here's an [ElixirCast on installing Elixir (and Erlang) with asdf](https://elixircasts.io/installing-elixir-with-asdf)
+  * Here's the main [docs for asdf](https://asdf-vm.com/#/)
+  * [Elixir install via `asdf` docs](https://github.com/asdf-vm/asdf-elixir)
+    * If this doesn't work for you, some have had success installing Elixir from Homebrew.
+  * [NodeJS install via `asdf` docs](https://github.com/asdf-vm/asdf-nodejs)
+* You'll need Postgres installed. See the `.env.template` file for the default role/password used by this application. You can change the connection string in `.env` or create the required user. It's likely you already have a Postgres role set up.
+  * If you're using a Mac, I recommend the [Postgres.app for Mac](https://postgresapp.com/) application.
+
 To start your Phoenix server:
     
-* Create `.env` file from `.env.template` (requires changes to contents)
+* Create `.env` file from `.env.template`
 * Source env vars with `source .env`
 * Install dependencies with `mix deps.get`
 * Create and migrate your database with `mix ecto.setup`
+  * If you see an error such as `** (Postgrex.Error) FATAL 28000 (invalid_authorization_specification) role "postgres" is not permitted to log in` check the that your role and password match what is in `.env`
+  * If you see an error such as `** (Mix) The database for Institute.Repo couldn't be created: ERROR 42501 (insufficient_privilege) permission denied to create database` make sure you have the following privs:
+    * `grant all privileges on database institute_dev to postgres;`
+    * `grant all privileges on database institute_test to postgres;`
 * Install Node.js dependencies with `cd assets && npm install`
 * Start Phoenix endpoint with `mix phx.server`
 
