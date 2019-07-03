@@ -18,7 +18,7 @@
   </article>
   <section>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <ul>
           <li><%= content(@conn, "Time", :text, do: "Time: 7-8pm") %></li>
           <li><%= content(@conn, "Day", :text, do: "Day: Wednesday, Jan. 1, 2019") %></li>
@@ -36,9 +36,6 @@
         <%= content(@conn, "Event Description", :html) do %>
           <p><%= @thesis_page.description %></p>
         <% end %>
-      </div>
-      <div class="col-md-6">
-        <%= content(@conn, "Meeting Image", :image, alt: "Meeting image", do: "https://place-hold.it/342x435") %>
       </div>
     </div>
   </section>
