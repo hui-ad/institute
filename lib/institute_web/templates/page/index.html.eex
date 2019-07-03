@@ -41,6 +41,11 @@
           <li>
             <%= link "Meetings Archive", to: Routes.meeting_path(@conn, :index) %>
           </li>
+          <%= if @current_user do %>
+          <li>
+            <%= link "Create user", to: Routes.user_path(@conn, :new) %>
+          </li>
+          <% end %>
         </ul>
       </div>
     </div>
