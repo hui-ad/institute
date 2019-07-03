@@ -1,5 +1,7 @@
 # Institute
 
+## Prerequisites
+
 Before you do anything, you'll need these prerequisites:
 
 * You'll need Erlang, Elixir, and Node installed. If you don't have them installed already, I recommend using `asdf` to install them. `asdf` allows you to manage multiple versions of each of these requirements on your machine.
@@ -10,6 +12,8 @@ Before you do anything, you'll need these prerequisites:
   * [NodeJS install via `asdf` docs](https://github.com/asdf-vm/asdf-nodejs)
 * You'll need Postgres installed. See the `.env.template` file for the default role/password used by this application. You can change the connection string in `.env` or create the required user. It's likely you already have a Postgres role set up.
   * If you're using a Mac, I recommend the [Postgres.app for Mac](https://postgresapp.com/) application.
+
+## Starting Phoenix
 
 To start your Phoenix server:
     
