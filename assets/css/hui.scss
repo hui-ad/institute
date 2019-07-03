@@ -1,10 +1,27 @@
 $off-white: #fbfbfb;
 $dark-gray: #474747;
-$ellsworth-purple: #553D95;
-$ellsworth-green: #09AE00;
+$ellsworth-purple: #553d95;
+$ellsworth-green: #09ae00;
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
   background-color: $off-white;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+
   a {
     color: $ellsworth-purple;
   }
@@ -12,7 +29,8 @@ body {
     color: $ellsworth-green;
   }
   p {
-    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+    font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua,
+      Georgia, serif;
     font-size: 21px;
     color: $dark-gray;
   }
@@ -20,12 +38,14 @@ body {
 
 main {
   .alert {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
 }
 
 .app-layout {
-  
+  width: 100%;
   header {
     border-bottom: 1px solid #eaeaea;
     font-size: 21px;
@@ -35,11 +55,16 @@ main {
   .header {
     background-color: $ellsworth-purple;
     padding: 0;
+    @media only screen and (max-width: 414px) {
+      width: 100%;
+    }
 
     nav {
       font-weight: 100;
-      
-      li, a {
+      margin-top: 10px;
+
+      li,
+      a {
         color: $off-white;
         font-size: 16px;
       }
@@ -50,13 +75,20 @@ main {
     height: 124px;
   }
   .group-title {
+    text-align: center;
     background-color: $off-white;
     min-height: 20px;
     font-size: 40px;
-    min-width: 600px;
+    min-width: 375px;
+    width: 100%;
     font-weight: 100;
-    margin-left: 20px;
     padding: 12px 40px 8px;
+
+    @media only screen and (max-width: 414px) {
+      font-size: 30px;
+      min-width: 375px;
+      width: 100%;
+    }
 
     small {
       font-weight: 100;
@@ -73,4 +105,3 @@ main {
     text-decoration: none;
   }
 }
-
