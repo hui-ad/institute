@@ -44,12 +44,14 @@ To use Gigalixir's CLI,
 
 Any registered user can create new users using the "Create user" link in the navigation bar. It only shows up when you're logged in, you'll need to create the first user via IEx.
 
+* Start `iex` from the command line: `iex`
 * Set alias:
   * `alias Institute.Accounts`
 * Create user `Accounts.register_user(%{name: "John Doe", username: "john", password: "secret"})`
 
 To change a user's password:
 
+* Start `iex` from the command line: `iex`
 * Set aliases: 
   * `alias Institute.{Accounts, Repo}`
 * Retrieve user `u = Accounts.get_user_by(%{username: "john"})`
