@@ -27,6 +27,8 @@ To start your Phoenix server:
     * `grant all privileges on database institute_test to postgres;`
 * Install Node.js dependencies with `cd assets && npm install`
 * Start Phoenix endpoint with `mix phx.server`
+  * If you see an error such as `[error] Can't find executable `mac_listener`` it's safe to ignore it. But, you won't be able to use live reload. You'll have to reload your browser manually after you make code changes.
+    * To fix this run `open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg` (as of 7/2019)
 
 Now you can visit [`localhost:4002`](http://localhost:4002) from your browser.
 
