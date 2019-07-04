@@ -28,7 +28,7 @@ To start your Phoenix server:
 * Install Node.js dependencies with `cd assets && npm install`
 * Start Phoenix endpoint with `mix phx.server`
   * If you see an error such as `[error] Can't find executable `mac_listener`` it's safe to ignore it. But, you won't be able to use live reload. You'll have to reload your browser manually after you make code changes.
-    * To fix this run `open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg` (as of 7/2019)
+    * To fix this run `open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg` (as of 7/2019, please see [this Elixir Forum post](https://elixirforum.com/t/cant-find-executable-mac-listener-error-exited-in-genserver-call/8886))
 
 Now you can visit [`localhost:4002`](http://localhost:4002) from your browser.
 
