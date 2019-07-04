@@ -50,20 +50,20 @@ main {
     border-bottom: 1px solid #eaeaea;
     font-size: 21px;
     margin-bottom: 4em;
-  }
 
-  .header {
-    background-color: $ellsworth-purple;
-    padding: 0;
-
-    nav {
-      font-weight: 100;
-      margin-top: 10px;
-
-      li,
-      a {
-        color: $off-white;
-        font-size: 16px;
+    section {
+      background-color: $ellsworth-purple;
+      padding: 0;
+      
+      nav {
+        font-weight: 100;
+        margin-top: 10px;
+        
+        li,
+        a {
+          color: $off-white;
+          font-size: 16px;
+        }
       }
     }
   }
@@ -97,9 +97,18 @@ main {
   }
 }
 
+// iPhone X
 @media only screen and (max-width: 414px) {
   
   .app-layout {
+
+    header {
+      margin-bottom: 1em;
+
+      section {
+        width: 100%;
+      }
+    }
     
     .group-title-container {
       width: 100%;
@@ -110,9 +119,23 @@ main {
       min-width: 375px;
       width: 100%;
     }
+  }
+}
+
+// iPhone 5
+@media only screen and (max-width: 320px) {
+  
+  .app-layout {
     
-    .header {
-      width: 100%;
+    .group-title {
+      
+      font-size: 21px;
+      min-width: auto;
+      
+      small {
+
+        font-size: 11px;
+      }
     }
   }
 }

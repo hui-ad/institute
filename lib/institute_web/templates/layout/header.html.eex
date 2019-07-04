@@ -1,5 +1,5 @@
 <header>
-  <section class="container-fluid header">
+  <section class="container-fluid">
     <nav role="navigation">
       <ul>
         <%= if @current_user do %>
