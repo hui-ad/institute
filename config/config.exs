@@ -1,14 +1,21 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
+# This file is responsible for configuring your umbrella
+# and **all applications** and their dependencies with the
+# help of Mix.Config.
 #
-# This configuration file is loaded before any dependency and
-# is restricted to this project.
-
-# General application configuration
+# Note that all applications in your umbrella share the
+# same configuration and dependencies, which is why they
+# all use the same configuration file. If you want different
+# configurations or dependencies per app, it is best to
+# move said applications out of the umbrella.
 use Mix.Config
 
+# Configure Mix tasks and generators
 config :institute,
   ecto_repos: [Institute.Repo]
+
+config :institute_web,
+  ecto_repos: [Institute.Repo],
+  generators: [context_app: :institute]
 
 # Configures the endpoint
 secret_key_base =
@@ -18,11 +25,11 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
-config :institute, InstituteWeb.Endpoint,
+config :institute_web, InstituteWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: secret_key_base,
   render_errors: [view: InstituteWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Institute.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: InstituteWeb.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -43,10 +50,6 @@ config :ueberauth, Ueberauth,
          uid_field: :username
        ]}
   ]
-
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-import_config "#{Mix.env()}.exs"
 
 # Thesis Main Config
 config :thesis,
@@ -69,3 +72,7 @@ config :thesis, :dynamic_pages,
   templates: ["page.html"],
   not_found_view: InstituteWeb.ErrorView,
   not_found_template: "404.html"
+
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{Mix.env()}.exs"
