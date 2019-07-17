@@ -8,7 +8,7 @@ Before you do anything, you'll need these prerequisites:
   * Here's an [ElixirCast on installing Elixir (and Erlang) with asdf](https://elixircasts.io/installing-elixir-with-asdf)
   * Here's the main [docs for asdf](https://asdf-vm.com/#/)
   * [Elixir install via `asdf` docs](https://github.com/asdf-vm/asdf-elixir)
-    * If this doesn't work for you, some have had success installing Elixir from Homebrew.
+    * If this doesn't work for you, some have had success installing Elixir and Node from Homebrew with `brew install elixir node`
   * [NodeJS install via `asdf` docs](https://github.com/asdf-vm/asdf-nodejs)
 * You'll need Postgres installed. See the `.env.template` file for the default role/password used by this application. You can change the connection string in `.env` or create the required user. It's likely you already have a Postgres role set up.
   * If you're using a Mac, I recommend the [Postgres.app for Mac](https://postgresapp.com/) application.
