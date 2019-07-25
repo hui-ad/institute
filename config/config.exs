@@ -14,7 +14,7 @@ config :institute,
   ecto_repos: [Institute.Repo]
 
 config :institute_web,
-  ecto_repos: [Institute.Repo],
+  # ecto_repos: [Institute.Repo],
   generators: [context_app: :institute]
 
 # Configures the endpoint
