@@ -1,4 +1,4 @@
-defmodule Institute.ThesisAuth do
+defmodule InstituteWeb.ThesisAuth do
   @moduledoc """
   Contains functions for handling Thesis authorization.
   """

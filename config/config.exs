@@ -54,7 +54,7 @@ config :ueberauth, Ueberauth,
 # Thesis Main Config
 config :thesis,
   store: Thesis.EctoStore,
-  authorization: Institute.ThesisAuth,
+  authorization: InstituteWeb.ThesisAuth,
   uploader: Thesis.RepoUploader
 
 # Thesis Store Config
