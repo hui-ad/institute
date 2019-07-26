@@ -56,3 +56,7 @@ To change a user's password:
 * Set aliases: `alias Institute.{Accounts, Repo}`
 * Retrieve user `u = Accounts.get_user_by(%{username: "john"})`
 * Set password `Repo.update!(User.registration_changeset(u, %{password: "secret"}))`
+
+# Contributing
+
+See [Development Instructions](Development.md)

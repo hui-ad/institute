@@ -15,7 +15,7 @@ defmodule InstituteWeb.AuthController do
 
   def delete(conn, _params) do
     conn
-    |> InstituteWeb.Auth.logout()
+    |> InstituteWeb.AuthPlug.logout()
     |> put_flash(:info, "You have been logged out!")
     |> redirect(to: "/")
   end
@@ -27,7 +27,7 @@ defmodule InstituteWeb.AuthController do
     case Accounts.authenticate_by_username_and_pass(username, password) do
       {:ok, user} ->
         conn
-        |> InstituteWeb.Auth.login(user)
+        |> InstituteWeb.AuthPlug.login(user)
         |> put_flash(:info, "Successfully authenticated")
         |> redirect(to: "/")
 
