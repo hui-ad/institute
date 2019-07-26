@@ -5,8 +5,8 @@ defmodule InstituteWeb.ThesisAuth do
 
   @behaviour Thesis.Auth
 
-  import InstituteWeb.Auth, only: [logged_in?: 1]
-  
+  import InstituteWeb.AuthPlug, only: [logged_in?: 1]
+
   def page_is_editable?(conn) do
     logged_in?(conn)
   end

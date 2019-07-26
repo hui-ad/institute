@@ -1,4 +1,4 @@
-defmodule InstituteWeb.Auth do
+defmodule InstituteWeb.AuthPlug do
   import Plug.Conn
   import Phoenix.Controller
 

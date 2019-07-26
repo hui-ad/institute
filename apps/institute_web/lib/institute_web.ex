@@ -23,7 +23,7 @@ defmodule InstituteWeb do
 
       import Plug.Conn
       import InstituteWeb.Gettext
-      import InstituteWeb.Auth, only: [authenticate_user: 2]
+      import InstituteWeb.AuthPlug, only: [authenticate_user: 2]
       alias InstituteWeb.Router.Helpers, as: Routes
 
       use Thesis.Controller
@@ -55,7 +55,7 @@ defmodule InstituteWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
-      import InstituteWeb.Auth, only: [authenticate_user: 2]
+      import InstituteWeb.AuthPlug, only: [authenticate_user: 2]
 
       use Thesis.Router
     end

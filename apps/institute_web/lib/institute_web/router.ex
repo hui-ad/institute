@@ -9,7 +9,7 @@ defmodule InstituteWeb.Router do
     plug(:fetch_flash)
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
-    plug(InstituteWeb.Auth)
+    plug(InstituteWeb.AuthPlug)
   end
 
   pipeline :api do
