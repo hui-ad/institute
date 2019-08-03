@@ -5,11 +5,15 @@
 Before you do anything, you'll need these prerequisites:
 
 * You'll need Erlang, Elixir, and Node installed. If you don't have them installed already, I recommend using `asdf` to install them. `asdf` allows you to manage multiple versions of each of these requirements on your machine.
-  * Here's an [ElixirCast on installing Elixir (and Erlang) with asdf](https://elixircasts.io/installing-elixir-with-asdf)
+  * First, here's an [ElixirCast on installing Elixir (and Erlang) with asdf](https://elixircasts.io/installing-elixir-with-asdf) which may be all you need.
+* To do it individually:
+  * [Erlang install via `asdf` docs](https://github.com/asdf-vm/asdf-erlang) 
   * Here's the main [docs for asdf](https://asdf-vm.com/#/)
   * [Elixir install via `asdf` docs](https://github.com/asdf-vm/asdf-elixir)
-    * If this doesn't work for you, some have had success installing Elixir and Node from Homebrew with `brew install elixir node`
+    * And the more detailed, general [`asdf` docs](https://asdf-vm.com/#/core-manage-asdf-vm)
   * [NodeJS install via `asdf` docs](https://github.com/asdf-vm/asdf-nodejs)
+* If this doesn't work for you, some have had success installing Elixir and Node from Homebrew with `brew install elixir node`
+  * Point is, you need Erlang, Elixir, and NodeJS.
 * You'll need Postgres installed. See the `.env.template` file for the default role/password used by this application. You can change the connection string in `.env` or create the required user. It's likely you already have a Postgres role set up.
   * If you're using a Mac, I recommend the [Postgres.app for Mac](https://postgresapp.com/) application.
 
