@@ -39,7 +39,8 @@ defmodule Institute.MixProject do
       {:ecto_sql, "~> 3.0"},
       {:jason, "~> 1.0"},
       {:postgrex, ">= 0.0.0"},
-      {:thesis, "~> 0.3.4"}
+      {:thesis, "~> 0.3.4"},
+      {:pbkdf2_elixir, "~> 1.0"}
     ]
   end
 

@@ -9,3 +9,5 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Institute.Accounts
+Accounts.register_user(%{name: "Kyle Oba", username: "koba", password: "temppass"})

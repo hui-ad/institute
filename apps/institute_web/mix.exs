@@ -47,7 +47,6 @@ defmodule InstituteWeb.MixProject do
       {:institute, in_umbrella: true},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:pbkdf2_elixir, "~> 1.0"},
       {:ueberauth, "~> 0.6.1"},
       {:ueberauth_identity, "~> 0.2.3"},
       {:thesis, "~> 0.3.4"}
