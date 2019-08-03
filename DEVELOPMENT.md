@@ -1,9 +1,9 @@
 # Steps
 
 1. Install asdf: https://asdf-vm.com/#/core-manage-asdf-vm
-2. Install elixir, erlang, and nodejs plugins for asdf: 
+2. Install Erlang, Elixir and NodeJS plugins for asdf: 
   - https://github.com/asdf-vm/asdf-erlang/
-  - https://asdf-vm.com/#/core-manage-asdf-vm
+  - https://github.com/asdf-vm/asdf-elixir
   - https://github.com/asdf-vm/asdf-nodejs
 3. Use asdf to install the versions we are using: `asdf install` (from repository root dir)
   - May need to `asdf reshim` if previous versions were in installed
