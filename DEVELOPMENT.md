@@ -20,9 +20,11 @@
   - Via dotenv:
     - `cd apps/institute; dotenv mix ecto.create`
     -  `cd apps/institute; dotenv mix ecto.migrate`
-10. Start Phoenix
+8. Install NPM packages
+  - `cd apps/institute_web/assets; npm install`
+9. Start Phoenix
   - Without dotenv: `cd path/to/project/root; mix phx.server`
   - Via dotenv: `cd path/to/project/root; dotenv mix phx.server`
-11. Visit http://localhost:4002 and enjoy the site!
+10. Visit http://localhost:4002 and enjoy the site!
 
 Also note that all submitted PR's should follow the code of conduct: https://institute.gigalixirapp.com/code_of_conduct
