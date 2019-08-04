@@ -1,4 +1,3 @@
-# Test2
 language: elixir
 matrix:
   include:
@@ -8,3 +7,10 @@ matrix:
       elixir: 1.8.2
     - otp_release: 22.0
       elixir: 1.9.0
+env:
+  - SECRET_KEY_BASE="hdJCKNw5/2H3Kqig0iOlh5iz2JyIaGJsSgreZmu+6fS/Jd281/E9Fg1PV+7L/+DH"
+  - DB=TEST_DATABASE_URL="postgresql://postgres:postgres@localhost:5432/institute_test"
+  - PORT=4002
+  - REPO_SSL="false"
+  - DISTILLERY_COOKIE="y/yyfSW7yjRkzptqeyhejewYWXtoE3NCIacIISUVxKavpF9wbjV8U9NBDv7vn+uw"
+  - SESSION_SIGNING_SALT="test du sel"
