@@ -5,6 +5,7 @@ defmodule Institute.Umbrella.MixProject do
     [
       apps_path: "apps",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
     ]
   end
@@ -24,6 +25,14 @@ defmodule Institute.Umbrella.MixProject do
   defp deps do
     [
       {:distillery, "~> 2.0"}
+    ]
+  end
+
+  defp aliases do
+    [
+      "test.setup": [
+        "cmd MIX_ENV=test mix ecto.setup"
+      ]
     ]
   end
 end
