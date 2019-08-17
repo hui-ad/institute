@@ -12,7 +12,16 @@ use Mix.Config
 
 app_name = (System.get_env("APP_NAME") || "institute") <> ".gigalixirapp.com"
 
+secret_key_base =
+  System.get_env("SECRET_KEY_BASE") ||
+    raise """
+    environment variable SECRET_KEY_BASE is missing.
+    Do not hard code this value in the config file.
+    You can generate one by calling: mix phx.gen.secret
+    """
+
 config :institute_web, InstituteWeb.Endpoint,
+  secret_key_base: secret_key_base,
   # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
   http: [port: {:system, "PORT"}],
   url: [host: app_name, port: 443],
@@ -26,6 +35,7 @@ database_url =
   System.get_env("DATABASE_URL") ||
     raise """
     environment variable DATABASE_URL is missing.
+    Do not hard code this value in the config file.
     For example: ecto://USER:PASS@HOST/DATABASE
     """
 

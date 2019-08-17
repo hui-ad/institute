@@ -18,16 +18,8 @@ config :institute_web,
   generators: [context_app: :institute]
 
 # Configures the endpoint
-secret_key_base =
-  System.get_env("SECRET_KEY_BASE") ||
-    raise """
-    environment variable SECRET_KEY_BASE is missing.
-    You can generate one by calling: mix phx.gen.secret
-    """
-
 config :institute_web, InstituteWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: secret_key_base,
   render_errors: [view: InstituteWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: InstituteWeb.PubSub, adapter: Phoenix.PubSub.PG2]
 

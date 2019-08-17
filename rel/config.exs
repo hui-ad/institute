@@ -8,43 +8,47 @@
 |> Enum.map(&Code.eval_file(&1))
 
 use Distillery.Releases.Config,
-    # This sets the default release built by `mix distillery.release`
-    default_release: :default,
-    # This sets the default environment used by `mix distillery.release`
-    default_environment: Mix.env()
+  # This sets the default release built by `mix distillery.release`
+  default_release: :default,
+  # This sets the default environment used by `mix distillery.release`
+  default_environment: Mix.env()
 
 # For a full list of config options for both releases
 # and environments, visit https://hexdocs.pm/distillery/config/distillery.html
-
 
 # You may define one or more environments in this file,
 # an environment's settings will override those of a release
 # when building in that environment, this combination of release
 # and environment configuration is called a profile
 
-distillery_cookie =
-  System.get_env("DISTILLERY_COOKIE") ||
-    raise """
-    environment variable DISTILLERY_COOKIE is missing.
-    """
-
 environment :dev do
+  distillery_cookie =
+    System.get_env("DISTILLERY_COOKIE") ||
+      "9PyJqET8HgS2i2qhto2n7D0DowCEWZ285grVmPDluGaIMjqB6Y3zd/WtX//e14Do"
+
   # If you are running Phoenix, you should make sure that
   # server: true is set and the code reloader is disabled,
   # even in dev mode.
   # It is recommended that you build with MIX_ENV=prod and pass
   # the --env flag to Distillery explicitly if you want to use
   # dev mode.
-  set dev_mode: true
-  set include_erts: false
-  set cookie: distillery_cookie |> String.to_atom
+  set(dev_mode: true)
+  set(include_erts: false)
+  set(cookie: distillery_cookie |> String.to_atom())
 end
 
 environment :prod do
-  set include_erts: true
-  set include_src: false
-  set cookie: distillery_cookie |> String.to_atom
-  set vm_args: "rel/vm.args"
+  distillery_cookie =
+    System.get_env("DISTILLERY_COOKIE") ||
+      raise """
+      environment variable DISTILLERY_COOKIE is missing.
+      Do not hard code this value in the config file.
+      """
+
+  set(include_erts: true)
+  set(include_src: false)
+  set(cookie: distillery_cookie |> String.to_atom())
+  set(vm_args: "rel/vm.args")
 end
 
 # You may define one or more releases in this file.
@@ -53,11 +57,13 @@ end
 # will be used by default
 
 release :institute_umbrella do
-  set version: "0.1.0"
-  set applications: [
-    :runtime_tools,
-    institute: :permanent,
-    institute_web: :permanent
-  ]
-end
+  set(version: "0.1.0")
 
+  set(
+    applications: [
+      :runtime_tools,
+      institute: :permanent,
+      institute_web: :permanent
+    ]
+  )
+end
