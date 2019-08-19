@@ -49,7 +49,6 @@ defmodule InstituteWeb.Endpoint do
         env_salt
 
       :dev == Mix.env() || :test == Mix.env() ->
-        # "zqM3hNve"
         raise "salt is in dev"
 
       :prod == Mix.env() ->
