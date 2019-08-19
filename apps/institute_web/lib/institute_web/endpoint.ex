@@ -46,7 +46,7 @@ defmodule InstituteWeb.Endpoint do
   signing_salt =
     cond do
       !is_nil(env_salt) ->
-        env_salt == "true"
+        env_salt
 
       :dev == Mix.env() || :test == Mix.env() ->
         # "zqM3hNve"
