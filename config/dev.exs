@@ -2,14 +2,17 @@ use Mix.Config
 
 database_url =
   System.get_env("DATABASE_URL") ||
-    raise """
-    environment variable DATABASE_URL is missing.
-    For example: ecto://USER:PASS@HOST/DATABASE
-    """
+    "postgresql://postgres:postgres@localhost:5432/institute_dev"
+
+secret_key_base =
+  System.get_env("SECRET_KEY_BASE") ||
+    "tPyOu5CaZcRye8PiDdgniCnrx1bufmfHw9703W5AX03zmtE9iY02bKmAGLQpFBP2"
+
+port_num = System.get_env("PORT") || "4002"
 
 # If desired, must shut SSL off with "false"
 # `ssl: true` is the default
-repo_ssl = (System.get_env("REPO_SSL") || "true") == "true"
+repo_ssl = (System.get_env("REPO_SSL") || "false") == "true"
 
 # Configure your database
 config :institute, Institute.Repo,
@@ -25,7 +28,8 @@ config :institute, Institute.Repo,
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :institute_web, InstituteWeb.Endpoint,
-  http: [port: {:system, "PORT"}],
+  secret_key_base: secret_key_base,
+  http: [port: port_num],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
