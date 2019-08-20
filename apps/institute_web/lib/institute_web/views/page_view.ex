@@ -17,7 +17,7 @@ defmodule InstituteWeb.PageView do
 
   @doc """
   Guards agains a nil stored in the DB.
-  
+
   Returns blank as a last resort.
   """
   def fmt_mtg_content(_), do: ""

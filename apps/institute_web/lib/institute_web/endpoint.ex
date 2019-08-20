@@ -47,14 +47,14 @@ defmodule InstituteWeb.Endpoint do
 
       :dev == Mix.env() || :test == Mix.env() ->
         "zqM3hNve"
-        
+
       :prod == Mix.env() ->
         raise """
         environment variable SESSION_SIGNING_SALT is missing.
         Do not hard code this value.
         """
     end
-  
+
   plug Plug.Session,
     store: :cookie,
     key: "_institute_web_key",
