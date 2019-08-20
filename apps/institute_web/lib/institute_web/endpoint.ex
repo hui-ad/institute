@@ -38,16 +38,27 @@ defmodule InstituteWeb.Endpoint do
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
 
-  session_signing_salt =
-    System.get_env("SESSION_SIGNING_SALT") ||
-      raise """
-      environment variable SESSION_SIGNING_SALT is missing.
-      """
+  env_salt = System.get_env("SESSION_SIGNING_SALT")
 
+  signing_salt =
+    cond do
+      !is_nil(env_salt) ->
+        env_salt
+
+      :dev == Mix.env() || :test == Mix.env() ->
+        "zqM3hNve"
+        
+      :prod == Mix.env() ->
+        raise """
+        environment variable SESSION_SIGNING_SALT is missing.
+        Do not hard code this value.
+        """
+    end
+  
   plug Plug.Session,
     store: :cookie,
     key: "_institute_web_key",
-    signing_salt: session_signing_salt
+    signing_salt: signing_salt
 
   plug InstituteWeb.Router
 end
