@@ -32,7 +32,9 @@ defmodule Institute.Umbrella.MixProject do
     [
       "test.setup": [
         "cmd MIX_ENV=test mix ecto.setup"
-      ]
+      ],
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run apps/institute/priv/repo/seeds.exs"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"]
     ]
   end
 end
