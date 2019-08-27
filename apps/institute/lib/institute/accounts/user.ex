@@ -1,8 +1,11 @@
 defmodule Institute.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Institute.Schedule.Event
 
   schema "users" do
+    has_many :created_events, Event, foreign_key: :creator_id
+    
     field(:name, :string)
     field(:username, :string)
 

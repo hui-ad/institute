@@ -41,6 +41,12 @@ defmodule InstituteWeb.Router do
     # get "/meeting/*path", MeetingController, :dynamic
     # get("/meeting/1", MeetingController, :page)
   end
+  
+  scope "/events", InstituteWeb do
+    pipe_through(:browser)
+
+    resources("/", EventController, only: [:index, :show, :new, :create])
+  end
 
   scope "/admin", InstituteWeb do
     pipe_through([:browser, :authenticate_user])
