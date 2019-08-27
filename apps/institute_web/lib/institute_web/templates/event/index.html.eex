@@ -1,0 +1,44 @@
+<h1>Listing Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Sub heading</th>
+      <th>Event start datetime</th>
+      <th>Event timezone</th>
+      <th>Event utc offset</th>
+      <th>Event end datetime</th>
+      <th>Location</th>
+      <th>Address</th>
+      <th>Video url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for event <- @events do %>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.description %></td>
+      <td><%= event.sub_heading %></td>
+      <td><%= event.event_start_datetime %></td>
+      <td><%= event.event_timezone %></td>
+      <td><%= event.event_utc_offset %></td>
+      <td><%= event.event_end_datetime %></td>
+      <td><%= event.location %></td>
+      <td><%= event.address %></td>
+      <td><%= event.video_url %></td>
+
+      <td>
+        <%= link "Show", to: Routes.event_path(@conn, :show, event) %>
+        <%= link "Edit", to: Routes.event_path(@conn, :edit, event) %>
+        <%= link "Delete", to: Routes.event_path(@conn, :delete, event), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Event", to: Routes.event_path(@conn, :new) %></span>

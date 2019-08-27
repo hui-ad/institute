@@ -1,0 +1,58 @@
+<h1>Show Event</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @event.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @event.description %>
+  </li>
+
+  <li>
+    <strong>Sub heading:</strong>
+    <%= @event.sub_heading %>
+  </li>
+
+  <li>
+    <strong>Event start datetime:</strong>
+    <%= @event.event_start_datetime %>
+  </li>
+
+  <li>
+    <strong>Event timezone:</strong>
+    <%= @event.event_timezone %>
+  </li>
+
+  <li>
+    <strong>Event utc offset:</strong>
+    <%= @event.event_utc_offset %>
+  </li>
+
+  <li>
+    <strong>Event end datetime:</strong>
+    <%= @event.event_end_datetime %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @event.location %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @event.address %>
+  </li>
+
+  <li>
+    <strong>Video url:</strong>
+    <%= @event.video_url %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span>
+<span><%= link "Back", to: Routes.event_path(@conn, :index) %></span>

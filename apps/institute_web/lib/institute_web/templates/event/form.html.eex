@@ -1,0 +1,51 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :title %>
+  <%= text_input f, :title %>
+  <%= error_tag f, :title %>
+
+  <%= label f, :description %>
+  <%= textarea f, :description %>
+  <%= error_tag f, :description %>
+
+  <%= label f, :sub_heading %>
+  <%= text_input f, :sub_heading %>
+  <%= error_tag f, :sub_heading %>
+
+  <%= label f, :event_start_datetime %>
+  <%= datetime_select f, :event_start_datetime %>
+  <%= error_tag f, :event_start_datetime %>
+
+  <%= label f, :event_timezone %>
+  <%= text_input f, :event_timezone %>
+  <%= error_tag f, :event_timezone %>
+
+  <%= label f, :event_utc_offset %>
+  <%= text_input f, :event_utc_offset %>
+  <%= error_tag f, :event_utc_offset %>
+
+  <%= label f, :event_end_datetime %>
+  <%= datetime_select f, :event_end_datetime %>
+  <%= error_tag f, :event_end_datetime %>
+
+  <%= label f, :location %>
+  <%= text_input f, :location %>
+  <%= error_tag f, :location %>
+
+  <%= label f, :address %>
+  <%= text_input f, :address %>
+  <%= error_tag f, :address %>
+
+  <%= label f, :video_url %>
+  <%= text_input f, :video_url %>
+  <%= error_tag f, :video_url %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
