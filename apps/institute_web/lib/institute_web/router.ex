@@ -45,7 +45,7 @@ defmodule InstituteWeb.Router do
   scope "/events", InstituteWeb do
     pipe_through(:browser)
 
-    resources("/", EventController, only: [:index, :show, :new, :create])
+    resources("/", EventController, only: [:index, :show, :new, :create, :edit, :delete])
   end
 
   scope "/admin", InstituteWeb do
