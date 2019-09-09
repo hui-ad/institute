@@ -3,15 +3,21 @@ defmodule InstituteWeb.EventControllerTest do
 
   alias Institute.Schedule
 
-  @create_attrs %{address: "some address", description: "some description", event_end_datetime: ~N[2010-04-17 14:00:00], event_start_datetime: ~N[2010-04-17 14:00:00], event_timezone: "some event_timezone", event_utc_offset: "some event_utc_offset", location: "some location", sub_heading: "some sub_heading", title: "some title", video_url: "some video_url"}
-  @update_attrs %{address: "some updated address", description: "some updated description", event_end_datetime: ~N[2011-05-18 15:01:01], event_start_datetime: ~N[2011-05-18 15:01:01], event_timezone: "some updated event_timezone", event_utc_offset: "some updated event_utc_offset", location: "some updated location", sub_heading: "some updated sub_heading", title: "some updated title", video_url: "some updated video_url"}
-  @invalid_attrs %{address: nil, description: nil, event_end_datetime: nil, event_start_datetime: nil, event_timezone: nil, event_utc_offset: nil, location: nil, sub_heading: nil, title: nil, video_url: nil}
+  @create_attrs %{address: "some address", description: "some description", event_end_datetime: ~N[2010-04-17 14:00:00], event_start_datetime: ~N[2010-04-17 14:00:00], event_timezone: "some event_timezone", location: "some location", sub_heading: "some sub_heading", title: "some title", video_url: "some video_url"}
+  @update_attrs %{address: "some updated address", description: "some updated description", event_end_datetime: ~N[2011-05-18 15:01:01], event_start_datetime: ~N[2011-05-18 15:01:01], event_timezone: "some updated event_timezone", location: "some updated location", sub_heading: "some updated sub_heading", title: "some updated title", video_url: "some updated video_url"}
+  @invalid_attrs %{address: nil, description: nil, event_end_datetime: nil, event_start_datetime: nil, event_timezone: nil, location: nil, sub_heading: nil, title: nil, video_url: nil}
 
   def fixture(:event) do
     {:ok, event} = Schedule.create_event(@create_attrs)
     event
   end
 
+  setup do
+    user = insert_user()
+    conn = assign(conn(), :current_user, user)
+    {:ok, conn: conn, user: user}
+  end
+  
   describe "index" do
     test "lists all events", %{conn: conn} do
       conn = get(conn, Routes.event_path(conn, :index))

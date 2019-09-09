@@ -25,10 +25,6 @@
   <%= text_input f, :event_timezone %>
   <%= error_tag f, :event_timezone %>
 
-  <%= label f, :event_utc_offset %>
-  <%= text_input f, :event_utc_offset %>
-  <%= error_tag f, :event_utc_offset %>
-
   <%= label f, :event_end_datetime %>
   <%= datetime_select f, :event_end_datetime %>
   <%= error_tag f, :event_end_datetime %>

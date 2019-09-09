@@ -20,6 +20,7 @@ defmodule InstituteWeb.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
       alias InstituteWeb.Router.Helpers, as: Routes
+      import InstituteWeb.TestHelpers
 
       # The default endpoint for testing
       @endpoint InstituteWeb.Endpoint

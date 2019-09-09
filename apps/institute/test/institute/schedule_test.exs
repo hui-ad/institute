@@ -6,9 +6,9 @@ defmodule Institute.ScheduleTest do
   describe "events" do
     alias Institute.Schedule.Event
 
-    @valid_attrs %{address: "some address", description: "some description", event_end_datetime: ~N[2010-04-17 14:00:00], event_start_datetime: ~N[2010-04-17 14:00:00], event_timezone: "some event_timezone", event_utc_offset: "some event_utc_offset", location: "some location", sub_heading: "some sub_heading", title: "some title", video_url: "some video_url"}
-    @update_attrs %{address: "some updated address", description: "some updated description", event_end_datetime: ~N[2011-05-18 15:01:01], event_start_datetime: ~N[2011-05-18 15:01:01], event_timezone: "some updated event_timezone", event_utc_offset: "some updated event_utc_offset", location: "some updated location", sub_heading: "some updated sub_heading", title: "some updated title", video_url: "some updated video_url"}
-    @invalid_attrs %{address: nil, description: nil, event_end_datetime: nil, event_start_datetime: nil, event_timezone: nil, event_utc_offset: nil, location: nil, sub_heading: nil, title: nil, video_url: nil}
+    @valid_attrs %{address: "some address", description: "some description", event_end_datetime: ~N[2010-04-17 14:00:00], event_start_datetime: ~N[2010-04-17 14:00:00], event_timezone: "some event_timezone", location: "some location", sub_heading: "some sub_heading", title: "some title", video_url: "some video_url"}
+    @update_attrs %{address: "some updated address", description: "some updated description", event_end_datetime: ~N[2011-05-18 15:01:01], event_start_datetime: ~N[2011-05-18 15:01:01], event_timezone: "some updated event_timezone", location: "some updated location", sub_heading: "some updated sub_heading", title: "some updated title", video_url: "some updated video_url"}
+    @invalid_attrs %{address: nil, description: nil, event_end_datetime: nil, event_start_datetime: nil, event_timezone: nil, location: nil, sub_heading: nil, title: nil, video_url: nil}
 
     def event_fixture(attrs \\ %{}) do
       {:ok, event} =
@@ -36,7 +36,6 @@ defmodule Institute.ScheduleTest do
       assert event.event_end_datetime == ~N[2010-04-17 14:00:00]
       assert event.event_start_datetime == ~N[2010-04-17 14:00:00]
       assert event.event_timezone == "some event_timezone"
-      assert event.event_utc_offset == "some event_utc_offset"
       assert event.location == "some location"
       assert event.sub_heading == "some sub_heading"
       assert event.title == "some title"
@@ -55,7 +54,6 @@ defmodule Institute.ScheduleTest do
       assert event.event_end_datetime == ~N[2011-05-18 15:01:01]
       assert event.event_start_datetime == ~N[2011-05-18 15:01:01]
       assert event.event_timezone == "some updated event_timezone"
-      assert event.event_utc_offset == "some updated event_utc_offset"
       assert event.location == "some updated location"
       assert event.sub_heading == "some updated sub_heading"
       assert event.title == "some updated title"

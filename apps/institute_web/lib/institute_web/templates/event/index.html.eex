@@ -8,7 +8,6 @@
       <th>Sub heading</th>
       <th>Event start datetime</th>
       <th>Event timezone</th>
-      <th>Event utc offset</th>
       <th>Event end datetime</th>
       <th>Location</th>
       <th>Address</th>
@@ -25,7 +24,6 @@
       <td><%= event.sub_heading %></td>
       <td><%= event.event_start_datetime %></td>
       <td><%= event.event_timezone %></td>
-      <td><%= event.event_utc_offset %></td>
       <td><%= event.event_end_datetime %></td>
       <td><%= event.location %></td>
       <td><%= event.address %></td>

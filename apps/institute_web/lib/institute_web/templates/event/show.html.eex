@@ -28,11 +28,6 @@
   </li>
 
   <li>
-    <strong>Event utc offset:</strong>
-    <%= @event.event_utc_offset %>
-  </li>
-
-  <li>
     <strong>Event end datetime:</strong>
     <%= @event.event_end_datetime %>
   </li>
