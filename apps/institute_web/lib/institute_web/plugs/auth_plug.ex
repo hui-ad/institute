@@ -11,6 +11,8 @@ defmodule InstituteWeb.AuthPlug do
 
     cond do
       user = conn.assigns[:current_user] ->
+        # Allow logged in user tests
+        # (Controversial: Found in Programming Phoenix 1.4, pg.162)
         login(conn, user)
       user = user_id && Institute.Accounts.get_user(user_id) ->
         assign(conn, :current_user, user)
