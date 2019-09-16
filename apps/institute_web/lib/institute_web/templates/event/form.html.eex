@@ -1,47 +1,87 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, [class: "event-form"], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
 
-  <%= label f, :title %>
-  <%= text_input f, :title %>
-  <%= error_tag f, :title %>
+  <div class="container">
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :title %>
+        <%= text_input f, :title, class: "form-control" %>
+        <%= error_tag f, :title %>
+      </div>
+    </div>
+    
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :description %>
+        <%= textarea f, :description, class: "form-control" %>
+        <%= error_tag f, :description %>
+      </div>
+    </div>
+    
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :sub_heading %>
+        <%= text_input f, :sub_heading, class: "form-control" %>
+        <%= error_tag f, :sub_heading %>
+      </div>
+    </div>
+    
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :event_start_datetime %>
+        <%= datetime_select f, :event_start_datetime, class: "form-control" %>
+        <%= error_tag f, :event_start_datetime %>
+      </div>
+    </div>
+    
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :event_timezone %>
+        <%= text_input f, :event_timezone, class: "form-control" %>
+        <%= error_tag f, :event_timezone %>
+      </div>
+    </div>
 
-  <%= label f, :description %>
-  <%= textarea f, :description %>
-  <%= error_tag f, :description %>
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :event_end_datetime %>
+        <%= datetime_select f, :event_end_datetime, class: "form-control" %>
+        <%= error_tag f, :event_end_datetime %>
+      </div>
+    </div>
 
-  <%= label f, :sub_heading %>
-  <%= text_input f, :sub_heading %>
-  <%= error_tag f, :sub_heading %>
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :location %>
+        <%= text_input f, :location, class: "form-control" %>
+        <%= error_tag f, :location %>
+      </div>
+    </div>
 
-  <%= label f, :event_start_datetime %>
-  <%= datetime_select f, :event_start_datetime %>
-  <%= error_tag f, :event_start_datetime %>
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :address %>
+        <%= text_input f, :address, class: "form-control" %>
+        <%= error_tag f, :address %>
+      </div>
+    </div>
 
-  <%= label f, :event_timezone %>
-  <%= text_input f, :event_timezone %>
-  <%= error_tag f, :event_timezone %>
+    <div class="row form-row">
+      <div class="col">
+        <%= label f, :video_url %>
+        <%= text_input f, :video_url, class: "form-control" %>
+        <%= error_tag f, :video_url %>
+      </div>
+    </div>
 
-  <%= label f, :event_end_datetime %>
-  <%= datetime_select f, :event_end_datetime %>
-  <%= error_tag f, :event_end_datetime %>
-
-  <%= label f, :location %>
-  <%= text_input f, :location %>
-  <%= error_tag f, :location %>
-
-  <%= label f, :address %>
-  <%= text_input f, :address %>
-  <%= error_tag f, :address %>
-
-  <%= label f, :video_url %>
-  <%= text_input f, :video_url %>
-  <%= error_tag f, :video_url %>
-
-  <div>
-    <%= submit "Save" %>
+    <div class="row form-row">
+      <div class="col">
+        <%= submit "Save" %>
+      </div>
+    </div>
   </div>
 <% end %>
