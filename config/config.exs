@@ -15,21 +15,9 @@ config :hello_web,
 # Configures the endpoint
 config :hello_web, HelloWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "qMxcvAsfJsuP27blnek1NP1Ze/9LVfUOrKB+Y/vbD1OWkqFQ7CqsV8s9/PG6FM8y",
   render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: HelloWeb.PubSub,
   live_view: [signing_salt: "olL/5nCd"]
-
-config :hello_web,
-  generators: [context_app: false]
-
-# Configures the endpoint
-config :hello_web, HelloWeb.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "/KzjlPdalNmtzfoV4PnrT4lT/qWM+S4U7IxgmksJgjf7GXIxX+q+CmhL1mVkVBsP",
-  render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: HelloWeb.PubSub,
-  live_view: [signing_salt: "gYM3B5cj"]
 
 # Configure Mix tasks and generators
 config :institute,

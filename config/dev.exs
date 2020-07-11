@@ -6,9 +6,14 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
+secret_key_base =
+  System.get_env("SECRET_KEY_BASE") ||
+    "tPyOu5CaZcRye8PiDdgniCnrx1bufmfHw9703W5AX03zmtE9iY02bKmAGLQpFBP2"
+
 hello_port_num = System.get_env("HELLO_PORT") || "4002"
 
 config :hello_web, HelloWeb.Endpoint,
+  secret_key_base: secret_key_base,
   http: [port: hello_port_num],
   debug_errors: true,
   code_reloader: true,
@@ -61,10 +66,6 @@ config :hello_web, HelloWeb.Endpoint,
 database_url =
   System.get_env("DATABASE_URL") ||
     "postgresql://postgres:postgres@localhost:5432/institute_dev"
-
-secret_key_base =
-  System.get_env("SECRET_KEY_BASE") ||
-    "tPyOu5CaZcRye8PiDdgniCnrx1bufmfHw9703W5AX03zmtE9iY02bKmAGLQpFBP2"
 
 institute_port_num = System.get_env("INSTITUTE_PORT") || "4001"
 
