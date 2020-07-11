@@ -67,7 +67,6 @@ config :hello_web, HelloWeb.Endpoint,
 # before starting your production server.
 
 config :institute_web, InstituteWeb.Endpoint,
-  secret_key_base: secret_key_base,
   # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
   http: [port: (String.to_integer(System.get_env("PORT")) + 1)],
   url: [host: app_name, port: 443],
