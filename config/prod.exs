@@ -21,7 +21,7 @@ app_name = (System.get_env("APP_NAME") || "institute") <> ".gigalixirapp.com"
 config :hello_web, HelloWeb.Endpoint,
   secret_key_base: secret_key_base,
   # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
-  http: [port: {:system, "PORT"}],
+  http: [port: (String.to_integer(System.get_env("PORT")) + 2)],
   url: [host: app_name, port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   # Without this line, your app will not start the web server!
@@ -120,7 +120,7 @@ config :hello_web, HelloWeb.Endpoint,
 config :institute_web, InstituteWeb.Endpoint,
   secret_key_base: secret_key_base,
   # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
-  http: [port: {:system, "PORT"}],
+  http: [port: (String.to_integer(System.get_env("PORT")) + 1)],
   url: [host: app_name, port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   # Without this line, your app will not start the web server!
