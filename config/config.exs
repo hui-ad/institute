@@ -56,7 +56,7 @@ config :ueberauth, Ueberauth,
 
 config :master_proxy,
   # any Cowboy options are allowed
-  http: [:inet6, port: System.get_env("PORT") || 4000],
+  http: [:inet6, port: 4000],
   backends: [
     %{
       path: ~r{^/hello},
