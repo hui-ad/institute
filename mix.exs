@@ -6,7 +6,13 @@ defmodule Institute.Umbrella.MixProject do
       apps_path: "apps",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: [
+        full: [
+          version: "0.0.1",
+          applications: [institute: :permanent, institute_web: :permanent, hello_web: :permanent]
+        ]
+      ]
     ]
   end
 
@@ -24,7 +30,6 @@ defmodule Institute.Umbrella.MixProject do
   # and cannot be accessed from applications inside the apps folder
   defp deps do
     [
-      {:distillery, "~> 2.0"}
     ]
   end
 

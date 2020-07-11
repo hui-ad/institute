@@ -1,0 +1,14 @@
+# app_root/compile
+
+# apps/institute_web (default)
+cd $phoenix_dir
+npm run deploy --prefix ./assets
+#use the ${phoenix_ex} variable instead of hardcoding phx or phoenix
+mix "${phoenix_ex}.digest"
+
+# apps/hello_web
+cd ../hello_web/assets
+npm install
+cd ..
+npm run deploy --prefix ./assets
+mix "${phoenix_ex}.digest"
