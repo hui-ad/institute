@@ -124,7 +124,7 @@ config :institute_web, InstituteWeb.Endpoint,
   url: [host: app_name, port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   # Without this line, your app will not start the web server!
-  server: false,
+  server: true,
   # Gigalixir force SSL (redirect http to https):
   force_ssl: [rewrite_on: [:x_forwarded_proto]]
 
