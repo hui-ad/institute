@@ -12,12 +12,26 @@ use Mix.Config
 config :hello_web,
   generators: [context_app: false]
 
+secret_key_base =
+  System.get_env("SECRET_KEY_BASE") ||
+    raise """
+    environment variable SECRET_KEY_BASE is missing.
+    You can generate one by calling: mix phx.gen.secret
+    """
+
+live_view_signing_salt =
+  System.get_env("LIVE_VIEW_SIGNING_SALT") ||
+    raise """
+    environment variable LIVE_VIEW_SIGNING_SALT is missing.
+    """
+
 # Configures the endpoint
 config :hello_web, HelloWeb.Endpoint,
   url: [host: "localhost"],
+  secret_key_base: secret_key_base,
   render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: HelloWeb.PubSub,
-  live_view: [signing_salt: "olL/5nCd"]
+  live_view: [signing_salt: live_view_signing_salt]
 
 # Configure Mix tasks and generators
 config :institute,
@@ -31,6 +45,7 @@ config :institute_web,
 # Configures the endpoint
 config :institute_web, InstituteWeb.Endpoint,
   url: [host: "localhost"],
+  secret_key_base: secret_key_base,
   render_errors: [view: InstituteWeb.ErrorView, accepts: ~w(html json)],
   pubsub_server: InstituteWeb.PubSub
 
@@ -56,7 +71,7 @@ config :ueberauth, Ueberauth,
 
 config :master_proxy,
   # any Cowboy options are allowed
-  http: [:inet6, port: 4000],
+  http: [:inet6, port: System.get_env("PORT")],
   backends: [
     %{
       path: ~r{^/hello},
