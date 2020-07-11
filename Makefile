@@ -14,6 +14,10 @@ migrate:
 deploy-clean:
 	git -c http.extraheader="GIGALIXIR-CLEAN: true" push gigalixir master
 
+.PHONY: deploy-clean-dev
+deploy-clean-dev:
+	git -c http.extraheader="GIGALIXIR-CLEAN: true" push gigalixir development:master
+
 # Remove unused deps from mix.lock file
 .PHONY: mix-deps-unlock-unused
 mix-deps-unlock-unused:
