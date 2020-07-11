@@ -8,6 +8,12 @@ defmodule InstituteWeb.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      # Start the Telemetry supervisor
+      InstituteWeb.Telemetry,
+      # Start the PubSub system
+      {Phoenix.PubSub, [name: InstituteWeb.PubSub, adapter: Phoenix.PubSub.PG2]},
+      # Start InstituteWeb presence
+      # InstituteWeb.Presence,
       # Start the endpoint when the application starts
       InstituteWeb.Endpoint
       # Starts a worker by calling: InstituteWeb.Worker.start_link(arg)

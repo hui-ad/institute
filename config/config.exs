@@ -22,7 +22,7 @@ config :institute_web,
 config :institute_web, InstituteWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: InstituteWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: InstituteWeb.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub_server: InstituteWeb.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,
